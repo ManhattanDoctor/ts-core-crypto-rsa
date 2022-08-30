@@ -40,6 +40,7 @@ export class RSA {
         if (_.isNil(exponent)) {
             exponent = 65537;
         }
+        
         let key = new NodeRSA();
         key.generateKeyPair(bits, exponent);
         return {
