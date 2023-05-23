@@ -1,8 +1,8 @@
-import * as _ from 'lodash';
-import { ISignature, ITransportCommand, ITransportCryptoManager } from '@ts-core/common';
+import { ISignature, ITransportCommand, TransportCryptoManager } from '@ts-core/common';
 import { RSA } from '../RSA';
+import * as _ from 'lodash';
 
-export class TransportCryptoManagerRSA implements ITransportCryptoManager {
+export class TransportCryptoManagerRSA extends TransportCryptoManager {
     // --------------------------------------------------------------------------
     //
     //  Static Methods
@@ -27,14 +27,9 @@ export class TransportCryptoManagerRSA implements ITransportCryptoManager {
 
     // --------------------------------------------------------------------------
     //
-    //  Protected Methods
+    //  Public Properties
     //
     // --------------------------------------------------------------------------
-
-    protected toString<U>(command: ITransportCommand<U>, nonce: string): string {
-        let request = !_.isNil(command.request) ? command.request.toString() : '';
-        return `${command.name}${request}${nonce}`;
-    }
 
     public get algorithm(): string {
         return TransportCryptoManagerRSA.ALGORITHM;
