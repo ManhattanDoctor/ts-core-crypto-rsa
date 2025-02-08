@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 export class TransportCryptoManagerRSA extends TransportCryptoManager {
     // --------------------------------------------------------------------------
     //
-    //  Static Methods
+    //  Constants
     //
     // --------------------------------------------------------------------------
 
@@ -18,11 +18,11 @@ export class TransportCryptoManagerRSA extends TransportCryptoManager {
     // --------------------------------------------------------------------------
 
     public async sign<U>(command: ITransportCommand<U>, nonce: string, privateKey: string): Promise<string> {
-        return RSA.sign(this.toString(command, nonce), privateKey);
+        return RSA.sign(this.toSign(command, nonce), privateKey);
     }
 
     public async verify<U>(command: ITransportCommand<U>, signature: ISignature): Promise<boolean> {
-        return RSA.verify(this.toString(command, signature.nonce), signature.value, signature.publicKey);
+        return RSA.verify(this.toSign(command, signature.nonce), signature.value, signature.publicKey);
     }
 
     // --------------------------------------------------------------------------
