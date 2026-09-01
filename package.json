@@ -1,7 +1,7 @@
 {
     "name": "@ts-core/crypto-rsa",
     "version": "3.0.6",
-    "description": "Classes and utils for crypto-rsa",
+    "description": "TypeScript library for RSA asymmetric encryption and digital signatures: key pair generation, signing, verification, encryption and decryption",
     "main": "./cjs/public-api.js",
     "module": "./esm/public-api.js",
     "exports": {
@@ -29,7 +29,16 @@
         "url": "git+https://github.com/ManhattanDoctor/ts-core-crypto-gost.git"
     },
     "keywords": [
-        "typescript"
+        "typescript",
+        "crypto",
+        "cryptography",
+        "rsa",
+        "encryption",
+        "decryption",
+        "signature",
+        "digital-signature",
+        "key-pair",
+        "security"
     ],
     "bugs": {
         "url": "https://github.com/ManhattanDoctor/ts-core-crypto-gost/issues"
